@@ -1,23 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
+import logomark from "@/assets/logomark.png.asset.json";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
+    <div className="relative min-h-screen bg-background">
       <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
+        src={logomark.url}
+        alt="Logomark"
+        className="absolute top-6 right-6 w-16 h-16 object-contain"
       />
     </div>
   );
